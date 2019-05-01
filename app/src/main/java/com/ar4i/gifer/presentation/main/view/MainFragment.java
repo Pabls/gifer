@@ -62,6 +62,11 @@ public class MainFragment extends BaseFragment implements IMainView {
         super.onViewCreated(view, savedInstanceState);
     }
 
+
+    //-------------------------------------------end lifecycle--------------------------------------
+
+
+    //==========================================start extends Fragment==============================
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
@@ -71,7 +76,8 @@ public class MainFragment extends BaseFragment implements IMainView {
         if (getPresenter() != null)
             getPresenter().attachView(this);
     }
-    //-------------------------------------------end lifecycle--------------------------------------
+    //-------------------------------------------end extends Fragment-------------------------------
+
 
     //==========================================start extends BaseFragment==========================
     @Override
@@ -116,7 +122,7 @@ public class MainFragment extends BaseFragment implements IMainView {
 
     @Override
     public void clearSearchView() {
-        searchViewEditText.setQuery(getResources().getString(R.string.empty), false);
+        searchViewEditText.setQuery(getString(R.string.empty), false);
         searchViewEditText.setIconified(true);
     }
 
