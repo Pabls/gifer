@@ -9,6 +9,11 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String" , "BASE_URL" , '"https://api.giphy.com/"'
+        buildConfigField "int" , "DEFAULT_READ_TIMEOUT_SEC" , '30'
+        buildConfigField "int" , "DEFAULT_CONNECT_TIMEOUT_SEC" , '30'
+        buildConfigField "String" , "API_KEY" , '"vbbot4VZaFn5d34lUITb3wxhs0ItDLl2"'
     }
     buildTypes {
         release {
@@ -28,6 +33,9 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.1.0-alpha02'
+
+    // Paging
+    implementation "android.arch.paging:runtime:1.0.0"
 
     //Tests
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -66,4 +74,5 @@ dependencies {
 
     // Stetho
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
 }

@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ar4i.gifer.app.App;
-import com.ar4i.gifer.app.di.ApplicationComponent;
+import com.ar4i.gifer.app.di.components.ApplicationComponent;
 import com.ar4i.gifer.presentation.base.presenter.IPresenter;
 
 public abstract class BaseFragment extends Fragment implements IBaseView {
@@ -28,15 +28,7 @@ public abstract class BaseFragment extends Fragment implements IBaseView {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(getLayoutId(), container, false);
-        return view;
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        if (getPresenter() != null)
-            getPresenter().attachView(this);
+        return inflater.inflate(getLayoutId(), container, false);
     }
 
     @Override
@@ -44,7 +36,6 @@ public abstract class BaseFragment extends Fragment implements IBaseView {
         super.onDestroyView();
         getPresenter().detachView();
     }
-
     //-------------------------------------------end lifecycle--------------------------------------
 
     //==========================================start implements IBaseView==========================
@@ -54,23 +45,16 @@ public abstract class BaseFragment extends Fragment implements IBaseView {
     }
 
     @Override
-    public void showLoader() {
-
-    }
-
-    @Override
-    public void hideLoader() {
-
+    public String getStringResourseById(int id) {
+        return getResources().getString(id);
     }
     //-------------------------------------------end implements IBaseView---------------------------
 
 
     //==========================================start protected methods=============================
-
     protected ApplicationComponent getApplicationComponent() {
         return App.getApplicationComponent();
     }
-
     //-------------------------------------------end protected methods------------------------------
 
     //==========================================start abstract methods==============================

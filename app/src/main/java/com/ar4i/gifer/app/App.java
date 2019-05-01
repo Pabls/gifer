@@ -2,9 +2,9 @@ package com.ar4i.gifer.app;
 
 import android.app.Application;
 
-import com.ar4i.gifer.app.di.ApplicationComponent;
-import com.ar4i.gifer.app.di.ApplicationModule;
-import com.ar4i.gifer.app.di.DaggerApplicationComponent;
+import com.ar4i.gifer.app.di.components.ApplicationComponent;
+import com.ar4i.gifer.app.di.components.DaggerApplicationComponent;
+import com.ar4i.gifer.app.di.modules.ApplicationModule;
 import com.facebook.stetho.Stetho;
 
 public class App extends Application {
@@ -36,6 +36,4 @@ public class App extends Application {
                 .applicationModule(new ApplicationModule(this))
                 .build();
     }
-
-
 }

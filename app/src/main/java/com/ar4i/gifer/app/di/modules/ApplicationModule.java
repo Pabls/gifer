@@ -1,4 +1,4 @@
-package com.ar4i.gifer.app.di;
+package com.ar4i.gifer.app.di.modules;
 
 import com.ar4i.gifer.app.App;
 

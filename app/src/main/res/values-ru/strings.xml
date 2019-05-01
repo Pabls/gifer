@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Гифер</string>
+    <string name="menu_search">Найти гифки</string>
+    <string name="not_found">По данному запросу ничего не найдено</string>
+    <string name="empty"></string>
+    <string name="сheck_network_connectivity">Проверьте подключение к сети</string>
 </resources>
